@@ -4,7 +4,29 @@
 
 class Car {
   // YOUR CODE HERE
+  #make
+  #model
+  #year
+
+  constructor(make, model, year ){
+    this.#make = make
+    this.#model = model
+    this.#year = year
+  }
+
+  #getCarInfo(){
+    return `Make: ${this.#make}, Model: ${this.#model}, Year: ${this.#year}`
+  }
+
+  getCarInfo(){
+    return this.#getCarInfo()
+  }
+
+  setYear(newYear){
+    this.#year = newYear>= this.#year?newYear: this.#year
+  }
 }
+
 
 
 // TEST CASE / DRIVER CODE
