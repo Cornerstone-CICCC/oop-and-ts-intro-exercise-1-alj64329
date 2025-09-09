@@ -6,11 +6,36 @@
 
 class Book {
   // YOUR CODE HERE
+  #title
+  #author
+  #price
+
+  constructor(title, author, price){
+    this.#title = title
+    this.#author = author
+    this.#price = price
+  }
+
+  get title(){
+    return this.#title
+  }
+  get price(){
+    return this.#price
+  }
+
+  set title(newTitle){
+    this.#title = newTitle.length===0? this.#title: newTitle
+  }
+
+  addDiscount(discount){
+    this.#price = ((100-discount)/100)*this.#price
+  }
 }
 
 
 // TEST CASE / DRIVER CODE
 const book1 = new Book("JavaScript Basics", "John Doe", 50);
+
 console.log(book1.title); // Expected output: "JavaScript Basics"
 console.log(book1.price); // Expected output: 50
 
